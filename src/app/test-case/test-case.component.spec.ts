@@ -21,17 +21,27 @@ describe(TestCaseComponent.name, () => {
   });
 
   describe('Dom', () => {
+    it('Should display TestCase labels when page is loaded', async () => {
+      const { fixture } = await makeSut();
+      const element: HTMLElement = fixture.nativeElement.querySelector(
+        '.test-case-name-label'
+      );
+
+      const result = element.textContent?.trim();
+
+      expect(result).toEqual('Nome');
+    });
+
     it('Should display TestCase when page is loaded', async () => {
       const { sut, fixture } = await makeSut();
-
-      const fakeTestCase = makeFakeTestCase();
-      sut.testCase = fakeTestCase;
+      sut.testCase = makeFakeTestCase();
       fixture.detectChanges();
-
       const element: HTMLElement =
         fixture.nativeElement.querySelector('.test-case');
 
-      expect(element.textContent?.trim()).toEqual(fakeTestCase.name);
+      const result = element.textContent?.trim();
+
+      expect(result).toEqual(makeFakeTestCase().name);
     });
   });
 });
