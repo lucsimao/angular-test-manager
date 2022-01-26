@@ -14,6 +14,7 @@ const makeSut = async () => {
 const makeFakeTestCase = (): TestCase => ({
   name: 'any_name',
   description: 'any_description',
+  preCondition: 'any_preCondition',
 });
 
 describe(TestCaseComponent.name, () => {
@@ -30,6 +31,7 @@ describe(TestCaseComponent.name, () => {
       } = {
         ['.test-case-name-label']: 'Nome',
         ['.test-case-description-label']: 'Descrição',
+        ['.test-case-precondition-label']: 'Pré-Condição',
       };
 
       const { fixture } = await makeSut();
@@ -53,6 +55,7 @@ describe(TestCaseComponent.name, () => {
       } = {
         ['.test-case-name']: makeFakeTestCase().name,
         ['.test-case-description']: makeFakeTestCase().description,
+        ['.test-case-precondition']: makeFakeTestCase().preCondition,
       };
 
       for (const field of Object.keys(validFields)) {
