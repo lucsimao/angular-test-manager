@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { TestCase } from '../models/test-case';
 import { TestCaseComponent } from './test-case.component';
+import { makeFakeTestCase } from '../test/testHelper';
 
 const makeSut = async () => {
   await TestBed.configureTestingModule({}).compileComponents();
@@ -10,12 +10,6 @@ const makeSut = async () => {
 
   return { sut, fixture };
 };
-
-const makeFakeTestCase = (): TestCase => ({
-  name: 'any_name',
-  description: 'any_description',
-  preCondition: 'any_preCondition',
-});
 
 describe(TestCaseComponent.name, () => {
   it('Should create Fixture', async () => {
