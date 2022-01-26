@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { TestCase } from './models/test-case';
+import { TestCase } from '../models/test-case';
 
 @Component({
   selector: 'app-test-case',

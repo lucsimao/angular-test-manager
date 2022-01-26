@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { TestCase } from './models/test-case';
+import { TestCase } from '../models/test-case';
 import { TestCaseComponent } from './test-case.component';
 
 const makeSut = async () => {
